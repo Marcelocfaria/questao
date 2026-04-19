@@ -21,19 +21,35 @@ const ANIMALS = [
   { name: "Tigre",        emoji: "🐯", threshold: 600  },
   { name: "Elefante",     emoji: "🐘", threshold: 700  },
   { name: "Águia",        emoji: "🦅", threshold: 850  },
-  { name: "Dragão",       emoji: "🐉", threshold: 1000 },
-  { name: "Unicórnio",    emoji: "🦄", threshold: 1500 },
-  { name: "Fênix",        emoji: "🔥", threshold: 2000 },
-  { name: "Deus Supremo", emoji: "⚡", threshold: 5000 },
-];
-
+  { name: "Dragão",        emoji: "🐉", threshold: 1000 },
+  { name: "Leviatã",       emoji: "🌊", threshold: 1100 },
+  { name: "Quimera",       emoji: "🦁", threshold: 1200 },
+  { name: "Hidra",         emoji: "🐍", threshold: 1350 },
+  { name: "Unicórnio",     emoji: "🦄", threshold: 1500 },
+  { name: "Grifo",         emoji: "🦅", threshold: 1650 },
+  { name: "Pégaso",        emoji: "🐎", threshold: 1800 },
+  { name: "Fênix",         emoji: "🔥", threshold: 2000 },
+  { name: "Espírito",      emoji: "👻", threshold: 2250 },
+  { name: "Guardião",      emoji: "🛡️", threshold: 2500 },
+  { name: "Mestre Arcano", emoji: "🔮", threshold: 2750 },
+  { name: "Semideus",      emoji: "🔱", threshold: 3000 },
+  { name: "Titã",          emoji: "🏔️", threshold: 3300 },
+  { name: "Anjo",          emoji: "😇", threshold: 3600 },
+  { name: "Arcanjo",       emoji: "👼", threshold: 4000 },
+  { name: "Serafim",       emoji: "✨", threshold: 4400 },
+  { name: "Entidade",      emoji: "🌌", threshold: 4800 },
+  { name: "Deus Supremo",  emoji: "⚡", threshold: 5000 }
+]
 // ══════════════════════════════════════════════
 // PATENTES MILITARES
 // ══════════════════════════════════════════════
 const RANKS = [
-  { name: "Soldado", key: "soldado", icon: "🪖", desc: "Começando a jornada"      },
-  { name: "Tenente", key: "tenente", icon: "⭐", desc: "Top 2º colocado geral"    },
+  { name: "Soldado", key: "soldado", icon: "🪖", desc: "Começando a jornada" },
+  { name: "Cabo", key: "cabo", icon: "🎗️", desc: "Ganhando experiência em campo" },
+  { name: "Tenente", key: "tenente", icon: "⭐", desc: "Top 2º colocado geral" },
+  { name: "Major", key: "major", icon: "🎖️", desc: "Veterano de grandes batalhas" },
   { name: "Coronel", key: "coronel", icon: "👑", desc: "Líder absoluto do ranking" },
+  { name: "General", key: "general", icon: "🌌", desc: "O auge da hierarquia militar" },
 ];
 
 // ══════════════════════════════════════════════
@@ -89,9 +105,13 @@ function getAnimalIndex(score) {
 }
 
 function getMilitaryRank(pos) {
-  if (pos === 1) return RANKS[2]; // coronel
-  if (pos === 2) return RANKS[1]; // tenente
-  return RANKS[0];                // soldado
+  // Se houver menos de 6 itens no RANKS, evita erro
+  if (pos === 1) return RANKS[5]; // General (Último da lista de 6)
+  if (pos === 2) return RANKS[4]; // Coronel
+  if (pos === 3) return RANKS[3]; // Capitão
+  if (pos <= 5)  return RANKS[2]; // Tenente
+  if (pos <= 10) return RANKS[1]; // Sargento
+  return RANKS[0];                // Soldado
 }
 
 // ══════════════════════════════════════════════
