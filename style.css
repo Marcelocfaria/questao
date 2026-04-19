@@ -416,13 +416,15 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px; /* Reduzi de 12px para 8px para ganhar espaço */
   margin-bottom: 16px;
+  width: 100%; /* Garante que ocupe a largura total */
+  flex-wrap: nowrap; /* FORÇA a ficar na mesma linha */
 }
 
 .counter-btn {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 10%;
   border: 1.5px solid var(--border);
   background: var(--bg);
@@ -458,11 +460,11 @@ body::before {
   border-radius: 16px;
   padding: 12px 8px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text);
   text-align: center;
-  width: 120px;
+  width: 90px;
   outline: none;
   transition: border-color 0.2s;
   -moz-appearance: textfield;
