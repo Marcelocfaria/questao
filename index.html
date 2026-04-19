@@ -956,7 +956,7 @@
 // ══════════════════════════════════════════════
 // CONFIG — SUBSTITUA A URL DO SEU APPS SCRIPT!
 // ══════════════════════════════════════════════
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_flDERtp56RYjDmqoyy85ckcpXoUCJZGmw9cL0NrNdHE6_aHBqTaRcQi15zIEpzyl/exec";
+const APPS_SCRIPT_URL = "SUA_URL_DO_APPS_SCRIPT_AQUI";
 // Após publicar o Apps Script como Web App, cole a URL acima.
 
 // ══════════════════════════════════════════════
@@ -1150,18 +1150,23 @@ async function refreshData() {
   showLoading("sincronizando...");
   try {
     if (APPS_SCRIPT_URL === "SUA_URL_DO_APPS_SCRIPT_AQUI") {
-      // ── MODO DEMO (sem Apps Script) ──
       fakeData();
     } else {
-      const res = await fetch(`${APPS_SCRIPT_URL}?action=getAll`, { redirect: "follow" });
-      const json = await res.json();
+      // Apps Script exige redirect:follow e não aceita headers extras no GET
+      const url = `${APPS_SCRIPT_URL}?action=getAll&t=${Date.now()}`;
+      const res = await fetch(url, { method: "GET", redirect: "follow" });
+      const text = await res.text();
+      // Remove possível BOM ou lixo antes do JSON
+      const clean = text.trim().replace(/^\uFEFF/, "");
+      const json = JSON.parse(clean);
+      if (json.error) throw new Error(json.error);
       globalData = json.data || [];
     }
     updateUI();
   } catch (e) {
-    console.error(e);
-    showToast("Erro ao sincronizar. Usando dados locais.", "error");
-    fakeData();
+    console.error("refreshData error:", e);
+    showToast("Erro ao sincronizar — verifique a URL do Apps Script.", "error");
+    if (!globalData.length) fakeData();
     updateUI();
   } finally {
     hideLoading();
@@ -1197,15 +1202,22 @@ async function submitQuestions() {
 
   try {
     if (APPS_SCRIPT_URL !== "SUA_URL_DO_APPS_SCRIPT_AQUI") {
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        redirect: "follow",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({ action: "addRecord", username: currentUser, date: todayStr(), count: val })
+      // Apps Script aceita POST com body como texto simples (application/x-www-form-urlencoded)
+      // ou via parâmetros de URL no GET. Usamos GET com params para máxima compatibilidade.
+      const params = new URLSearchParams({
+        action: "addRecord",
+        username: currentUser,
+        date: todayStr(),
+        count: val
       });
-      await res.json();
+      const url = `${APPS_SCRIPT_URL}?${params.toString()}`;
+      const res = await fetch(url, { method: "GET", redirect: "follow" });
+      const text = await res.text();
+      const clean = text.trim().replace(/^\uFEFF/, "");
+      const json = JSON.parse(clean);
+      if (json.error) throw new Error(json.error);
     } else {
-      // demo
+      // demo local
       globalData.push({ username: currentUser, date: todayStr(), count: val });
     }
 
