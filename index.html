@@ -65,13 +65,10 @@
     </div>
   </div>
 
-  <!-- TAB BAR -->
+  <!-- TAB BAR (sem aba ADICIONAR) -->
   <div class="tabbar">
     <button class="tab-btn active" onclick="switchTab('home')" data-tab="home">
       <span class="tab-icon">🏠</span>INÍCIO
-    </button>
-    <button class="tab-btn" onclick="switchTab('add')" data-tab="add">
-      <span class="tab-icon">➕</span>ADICIONAR
     </button>
     <button class="tab-btn" onclick="switchTab('rank-day')" data-tab="rank-day">
       <span class="tab-icon">📅</span>HOJE
@@ -90,6 +87,7 @@
   <!-- ─── TAB: HOME ─── -->
   <div id="tab-home" class="tab-content active">
 
+    <!-- HERO -->
     <div class="hero-bar">
       <span class="hero-animal" id="hero-animal">🐛</span>
       <div class="hero-name" id="hero-name">Carregando...</div>
@@ -125,6 +123,49 @@
       </div>
     </div>
 
+    <!-- ✅ REGISTRAR QUESTÕES — integrado na home -->
+    <div class="add-section">
+      <div class="add-section-header">
+        <span class="add-section-title">➕ Registrar questões</span>
+        <span class="add-section-sub">Quantas você fez agora?</span>
+      </div>
+
+      <div class="counter-controls">
+        <button class="counter-btn" onclick="changeCount(-10)" touch-action="manipulation">−10</button>
+        <button class="counter-btn" onclick="changeCount(-1)">−</button>
+        <input
+          class="counter-input"
+          id="count-input"
+          type="number"
+          inputmode="numeric"
+          value="10"
+          min="1"
+          max="9999"
+        >
+        <button class="counter-btn" onclick="changeCount(1)">+</button>
+        <button class="counter-btn" onclick="changeCount(10)">+10</button>
+      </div>
+
+      <div class="quick-btns">
+        <button class="quick-btn" onclick="setCount(5)">5</button>
+        <button class="quick-btn" onclick="setCount(10)">10</button>
+        <button class="quick-btn" onclick="setCount(20)">20</button>
+        <button class="quick-btn" onclick="setCount(30)">30</button>
+        <button class="quick-btn" onclick="setCount(50)">50</button>
+        <button class="quick-btn" onclick="setCount(100)">100</button>
+      </div>
+
+      <button class="btn-primary btn-register" onclick="submitQuestions()">REGISTRAR ✓</button>
+    </div>
+
+    <!-- REGISTROS DE HOJE -->
+    <div class="card">
+      <div class="card-title">📋 Registros de hoje</div>
+      <div id="today-logs-list">
+        <div class="empty-state"><span>📝</span>Nenhum registro hoje ainda.</div>
+      </div>
+    </div>
+
     <!-- OBJETIVO PRINCIPAL -->
     <div class="objective-section">
       <div class="objective-label">⚔️ Objetivo — 5.000 questões</div>
@@ -152,44 +193,6 @@
     </div>
 
   </div><!-- /tab-home -->
-
-  <!-- ─── TAB: ADICIONAR ─── -->
-  <div id="tab-add" class="tab-content">
-    <div class="section-title">Registrar questões</div>
-    <div class="section-desc">Quantas questões você fez hoje?</div>
-
-    <div class="add-section">
-      <div style="font-size:13px;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;">
-        Quantidade
-      </div>
-
-      <div class="counter-controls">
-        <button class="counter-btn" onclick="changeCount(-10)">−10</button>
-        <button class="counter-btn" onclick="changeCount(-1)">−</button>
-        <input class="counter-input" id="count-input" type="number" value="10" min="1" max="9999">
-        <button class="counter-btn" onclick="changeCount(1)">+</button>
-        <button class="counter-btn" onclick="changeCount(10)">+10</button>
-      </div>
-
-      <div class="quick-btns">
-        <button class="quick-btn" onclick="setCount(5)">5</button>
-        <button class="quick-btn" onclick="setCount(10)">10</button>
-        <button class="quick-btn" onclick="setCount(20)">20</button>
-        <button class="quick-btn" onclick="setCount(30)">30</button>
-        <button class="quick-btn" onclick="setCount(50)">50</button>
-        <button class="quick-btn" onclick="setCount(100)">100</button>
-      </div>
-
-      <button class="btn-primary" onclick="submitQuestions()">REGISTRAR ✓</button>
-    </div>
-
-    <div class="card">
-      <div class="card-title">📋 Registros de hoje</div>
-      <div id="today-logs-list">
-        <div class="empty-state"><span>📝</span>Nenhum registro hoje ainda.</div>
-      </div>
-    </div>
-  </div><!-- /tab-add -->
 
   <!-- ─── TAB: RANK DIA ─── -->
   <div id="tab-rank-day" class="tab-content">
