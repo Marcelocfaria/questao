@@ -87,27 +87,25 @@
   <!-- ─── TAB: HOME ─── -->
   <div id="tab-home" class="tab-content active">
 
-    <!-- HERO -->
     <div class="hero-bar">
-  <div class="hero-header">
-    <span class="hero-animal" id="hero-animal">🐛</span>
-    
-    <div class="hero-info">
-      <div class="hero-name" id="hero-name">Carregando...</div>
-      <div class="hero-title" id="hero-title">—</div>
-    </div>
-  </div>
+      <div class="hero-header">
+        <span class="hero-animal" id="hero-animal">🐛</span>
+        <div class="hero-info">
+          <div class="hero-name" id="hero-name">Carregando...</div>
+          <div class="hero-title" id="hero-title">—</div>
+        </div>
+      </div>
 
-  <div class="progress-wrap">
-    <div class="progress-labels">
-      <span id="animal-progress-label">Próxima evolução</span>
-      <span id="animal-progress-pct">0%</span>
-    </div>
-    <div class="progress-track">
-      <div class="progress-fill" id="animal-progress-fill" style="width:0%"></div>
-    </div>
-  </div>
-  </div>
+      <div class="progress-wrap">
+        <div class="progress-labels">
+          <span id="animal-progress-label">Próxima evolução</span>
+          <span id="animal-progress-pct">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="animal-progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+
       <div class="stats-row">
         <div class="stat-box">
           <div class="stat-val" id="stat-today">0</div>
@@ -126,9 +124,10 @@
       <div class="streak-pill" id="streak-pill">
         🔥 <span id="streak-text">0 dias seguidos</span>
       </div>
-    </div>
 
-    <!-- ✅ REGISTRAR QUESTÕES — integrado na home -->
+    </div><!-- fecha hero-bar AQUI ✅ -->
+
+    <!-- REGISTRAR QUESTÕES -->
     <div class="add-section">
       <div class="add-section-header">
         <span class="add-section-title">➕ Registrar questões</span>
@@ -136,17 +135,10 @@
       </div>
 
       <div class="counter-controls">
-        <button class="counter-btn" onclick="changeCount(-10)" touch-action="manipulation">−10</button>
+        <button class="counter-btn" onclick="changeCount(-10)">−10</button>
         <button class="counter-btn" onclick="changeCount(-1)">−</button>
-        <input
-          class="counter-input"
-          id="count-input"
-          type="number"
-          inputmode="numeric"
-          value="10"
-          min="1"
-          max="9999"
-        >
+        <input class="counter-input" id="count-input" type="number"
+               inputmode="numeric" value="10" min="1" max="9999">
         <button class="counter-btn" onclick="changeCount(1)">+</button>
         <button class="counter-btn" onclick="changeCount(10)">+10</button>
       </div>
@@ -171,7 +163,7 @@
       </div>
     </div>
 
-    <!-- OBJETIVO PRINCIPAL -->
+    <!-- OBJETIVO -->
     <div class="objective-section">
       <div class="objective-label">⚔️ Objetivo — 5.000 questões</div>
       <div class="objective-numbers">
@@ -185,20 +177,21 @@
       </div>
     </div>
 
-    <!-- PATENTE MILITAR -->
+    <!-- PATENTE -->
     <div class="card">
       <div class="card-title">🎖️ Patente</div>
       <div style="display:flex;align-items:center;gap:14px;">
         <div style="font-size:48px;" id="rank-icon">🪖</div>
         <div>
-          <div style="font-family:'Bebas Neue',cursive;font-size:26px;letter-spacing:1px;" id="rank-name-display">—</div>
-          <div style="font-size:12px;color:var(--muted);" id="rank-desc-display">—</div>
+          <div style="font-family:'Bebas Neue',cursive;font-size:26px;letter-spacing:1px;"
+               id="rank-name-display">—</div>
+          <div style="font-size:12px;color:var(--muted);"
+               id="rank-desc-display">—</div>
         </div>
       </div>
     </div>
 
-  </div><!-- /tab-home -->
-
+  </div><!-- fecha tab-home ✅ -->
   <!-- ─── TAB: RANK DIA ─── -->
   <div id="tab-rank-day" class="tab-content">
     <div class="section-title">Rank do Dia</div>
