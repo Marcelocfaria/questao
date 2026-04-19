@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════════
 // CONFIG — SUBSTITUA A URL DO SEU APPS SCRIPT!
 // ══════════════════════════════════════════════
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx13MM4T8zd-D-PYqcyX3okqFDXlGGsH3-rWXKf47T9-2ueJrQ0GHdpJbSQgzHdqW3F/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkOst4rJ9PGCcpuyOAOQcJwwKIl65yL0MlMhvuHhyz-c8V7T5DMNJA4GNUw_Dx7jcw/exec";
 
 // ══════════════════════════════════════════════
 // ANIMAIS POR NÍVEL
