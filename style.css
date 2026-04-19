@@ -296,7 +296,7 @@ body::before {
 }
 
 
-/* ─── HERO STATS (HOME) ─── */
+/* ─── HERO STATS (HOME) — AJUSTADO ─── */
 .hero-bar {
   background: linear-gradient(135deg, #111600 0%, #160b00 100%);
   border: 1px solid var(--border);
@@ -307,22 +307,23 @@ body::before {
   overflow: hidden;
 }
 
-.hero-bar::before {
-  content: '';
-  position: absolute;
-  right: -30px;
-  top: -30px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,200,66,0.12) 0%, transparent 70%);
+/* Container que criamos no HTML */
+.hero-header {
+  display: flex;
+  align-items: center; /* Alinha o bicho com o texto no meio */
+  gap: 16px;           /* Espaço entre o bicho e o texto */
+  margin-bottom: 20px;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column; /* Nome em cima, Título embaixo */
 }
 
 .hero-animal {
   font-size: 56px;
   line-height: 1;
-  margin-bottom: 8px;
-  display: block;
+  /* Removido o display: block para não quebrar a linha */
 }
 
 .hero-name {
@@ -330,17 +331,16 @@ body::before {
   font-size: 32px;
   letter-spacing: 1px;
   color: var(--text);
-  line-height: 1;
+  line-height: 1.1; /* Ajustado para não cortar letras */
 }
 
 .hero-title {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--accent);
-  margin-top: 4px;
-  margin-bottom: 20px;
+  margin-top: 2px; /* Espaço entre nome e título */
 }
 
 .progress-wrap { margin-bottom: 14px; }
