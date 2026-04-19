@@ -423,14 +423,14 @@ body::before {
 .counter-btn {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 10%;
   border: 1.5px solid var(--border);
   background: var(--bg);
   color: var(--text);
   font-size: 28px;
   line-height: 1;
   cursor: pointer;
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   transition: border-color 0.15s, background 0.15s, transform 0.1s;
