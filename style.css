@@ -514,9 +514,13 @@ body::before {
   border-radius: 6px;
   margin-left: 4px;
 }
-.rank-badge.coronel { background: rgba(245,200,66,0.15);  color: var(--rank-gold); }
-.rank-badge.tenente { background: rgba(176,190,197,0.15); color: var(--rank-silver); }
-.rank-badge.soldado { background: rgba(205,124,58,0.15);  color: var(--rank-bronze); }
+
+.rank-badge.general { background: rgba(255, 215, 0, 0.2); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.3); }
+.rank-badge.coronel { background: rgba(245, 200, 66, 0.15); color: var(--rank-gold); }
+.rank-badge.capitao { background: rgba(230, 126, 34, 0.15); color: #e67e22; }
+.rank-badge.tenente { background: rgba(176, 190, 197, 0.15); color: var(--rank-silver); }
+.rank-badge.sargento { background: rgba(142, 68, 173, 0.15); color: #8e44ad; }
+.rank-badge.soldado  { background: rgba(205, 124, 58, 0.15);  color: var(--rank-bronze); }
 
 /* ─── SECTION TITLE ─── */
 .section-title {
