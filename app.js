@@ -36,9 +36,9 @@ const ANIMALS = [
   { name: "Titã",          emoji: "🏔️", threshold: 3300 },
   { name: "Anjo",          emoji: "😇", threshold: 3600 },
   { name: "Arcanjo",       emoji: "👼", threshold: 4000 },
-  { name: "Serafim",       emoji: "✨", threshold: 4400 },
+  { name: "Estrela do Show",       emoji: "✨", threshold: 4400 },
   { name: "Entidade",      emoji: "🌌", threshold: 4800 },
-  { name: "Deus Supremo",  emoji: "⚡", threshold: 5000 }
+  { name: "Concursado",  emoji: "⚡", threshold: 5000 }
 ]
 // ══════════════════════════════════════════════
 // PATENTES MILITARES
