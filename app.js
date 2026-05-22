@@ -38,7 +38,31 @@ const ANIMALS = [
   { name: "Arcanjo",       emoji: "👼", threshold: 4000 },
   { name: "Estrela do Show",       emoji: "✨", threshold: 4400 },
   { name: "Entidade",      emoji: "🌌", threshold: 4800 },
-  { name: "Concursado",  emoji: "⚡", threshold: 5000 }
+  { name: " Concurso Prefeitura",  emoji: "🏢", threshold: 5000 }
+  { name: "Metrópole",     emoji: "🏙️", threshold: 5200 },
+  { name: "Nação",         emoji: "🗺️", threshold: 5400 },
+  { name: "Império",       emoji: "👑", threshold: 5600 },
+  { name: "Planeta",       emoji: "🌍", threshold: 5800 },
+  { name: "Constelação",   emoji: "✨", threshold: 6000 },
+  { name: "Galáxia",       emoji: "🌌", threshold: 6200 },
+  { name: "Supernova",     emoji: "💥", threshold: 6400 },
+  { name: "Buraco Negro",  emoji: "🕳️", threshold: 6600 },
+  { name: "Ciborgue",      emoji: "🤖", threshold: 6800 },
+  { name: "Matrix",        emoji: "🌐", threshold: 7000 },
+  { name: "Singularidade", emoji: "🧠", threshold: 7200 },
+  { name: "Hiperespaço",   emoji: "🚀", threshold: 7400 },
+  { name: "Eternidade",    emoji: "⏳", threshold: 7600 },
+  { name: "Infinito",      emoji: "♾️", threshold: 7800 },
+  { name: "Multiverso",    emoji: "🔮", threshold: 8000 },
+  { name: "Viajante do Tempo", emoji: "⏳", threshold: 8200 },
+  { name: "Arquiteto Cósmico", emoji: "📐", threshold: 8400 },
+  { name: "Divindade Estelar", emoji: "☀️", threshold: 8600 },
+  { name: "Juiz do Destino",   emoji: "⚖️", threshold: 8900 },
+  { name: "Soberano do Vazio", emoji: "👁️", threshold: 9200 },
+  { name: "Origem de Tudo",    emoji: "💥", threshold: 9500 },
+  { name: "Presença Suprema",  emoji: "👑", threshold: 9800 },
+  { name: "SEDEST",          emoji: "🌟", threshold: 10000 }
+]
 ]
 // ══════════════════════════════════════════════
 // PATENTES MILITARES
@@ -338,8 +362,8 @@ function updateUI() {
   document.getElementById("streak-text").textContent =
     `${streak} dia${streak !== 1 ? "s" : ""} seguido${streak !== 1 ? "s" : ""}`;
 
-  // Objetivo 5000
-  const objPct = Math.min(Math.floor((total / 5000) * 100), 100);
+  // Objetivo 10000
+  const objPct = Math.min(Math.floor((total / 10000) * 100), 100);
   document.getElementById("obj-current").textContent          = total;
   document.getElementById("obj-pct").textContent              = objPct + "%";
   document.getElementById("obj-progress-fill").style.width    = objPct + "%";
