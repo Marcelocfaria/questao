@@ -63,7 +63,6 @@ const ANIMALS = [
   { name: "Presença Suprema",  emoji: "👑", threshold: 9800 },
   { name: "SEDEST",          emoji: "🌟", threshold: 10000 }
 ]
-]
 // ══════════════════════════════════════════════
 // PATENTES MILITARES
 // ══════════════════════════════════════════════
