@@ -38,7 +38,7 @@ const ANIMALS = [
   { name: "Arcanjo",       emoji: "👼", threshold: 4000 },
   { name: "Estrela do Show",       emoji: "✨", threshold: 4400 },
   { name: "Entidade",      emoji: "🌌", threshold: 4800 },
-  { name: " Concurso Prefeitura",  emoji: "🏢", threshold: 5000 }
+  { name: " Concurso Prefeitura",  emoji: "🏢", threshold: 5000 },
   { name: "Metrópole",     emoji: "🏙️", threshold: 5200 },
   { name: "Nação",         emoji: "🗺️", threshold: 5400 },
   { name: "Império",       emoji: "👑", threshold: 5600 },
