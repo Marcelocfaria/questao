@@ -61,7 +61,7 @@ const ANIMALS = [
   { name: "Soberano do Vazio", emoji: "👁️", threshold: 9200 },
   { name: "Origem de Tudo",    emoji: "💥", threshold: 9500 },
   { name: "Presença Suprema",  emoji: "👑", threshold: 9800 },
-  { name: "SEDEST",          emoji: "🌟", threshold: 10000 }
+  { name: "Concurso SEDEST",          emoji: "🌟", threshold: 10000 }
 ]
 // ══════════════════════════════════════════════
 // PATENTES MILITARES
